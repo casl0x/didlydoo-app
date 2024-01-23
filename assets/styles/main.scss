@@ -11,11 +11,15 @@ body {
 }
 
 h1 {
-    text-align: center;
+    text: {
+        align: center;
+        decoration: underline;
+    }
     margin: 2%;
     font: {
         size: 2rem;
         family: $title-font;
     }
 }
+
 
