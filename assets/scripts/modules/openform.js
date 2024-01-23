@@ -1,4 +1,3 @@
-
 function addEvent (){
     const container = document.querySelector('.container');
     const addBtn = document.querySelector('.openbtn');
@@ -10,12 +9,4 @@ function addEvent (){
     })
 }
 
-function closeForm (){
-    const validateBtn = document.querySelector('.event-button');
-
-    validateBtn.addEventListener('click', () => {
-        formEvent.classList.toggle('open');
-    })
-}
-
-export {addEvent, closeForm}
+export default addEvent
