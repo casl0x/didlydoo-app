@@ -1,8 +1,8 @@
 
 function addEvent (){
     const container = document.querySelector('.container');
-    const addBtn = document.querySelector('.form');
-    const formEvent = document.querySelector('.event');
+    const addBtn = document.querySelector('.openbtn');
+    const formEvent = document.querySelector('.form');
 
     addBtn.addEventListener('click', () => {
         formEvent.classList.toggle('open');

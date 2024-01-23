@@ -1,17 +1,21 @@
-.event {
+.form {
     display: none;
 }
 
 .open {
-    width: 60%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin: 25vh auto;
-    padding: 1rem;
-    border-radius: 16px;
+    padding: 1.5rem;
+    border-radius: 8px;
     border: 1px solid black;
 }
 
