@@ -5,4 +5,10 @@
 @import './design/form';
 
 // design global
-
+h1 {
+    text-align: center;
+    margin: 2%;
+    font: {
+        size: 2rem;
+    }
+}
