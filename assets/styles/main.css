@@ -48,12 +48,27 @@ table {
   border-spacing: 0;
 }
 
+.form {
+  margin: auto 45vw;
+}
+
 .event {
+  display: none;
+}
+
+.open {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin: 25vh 5vw;
+  padding: 1rem;
   background: lightblue;
+}
+
+h1 {
+  text-align: center;
+  margin: 2%;
+  font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */
