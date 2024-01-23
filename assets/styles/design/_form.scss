@@ -1,11 +1,34 @@
+.form {
+    display: none;
+}
+
+.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 .event {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
-    margin: 25vh 5vw;
+    margin: 20vh auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid black;
+    &-input {
+        font-size: 1rem;
+        outline: none;
+        padding: .25rem;
+        border: 1px solid $border-box;
+        &:focus {
+            border: none;
+            box-shadow: 0 0 0 3px $hover-btn;
+        }
+    }
+}
 
-    background: lightblue;
+.blur {
+    filter: blur(15px);
 }

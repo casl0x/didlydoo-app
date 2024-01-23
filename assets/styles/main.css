@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,18 +49,78 @@ table {
   border-spacing: 0;
 }
 
+.openbtn {
+  position: relative;
+  margin: auto 45vw;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 16px;
+  background: rgba(211, 211, 211, 0.4);
+  overflow: hidden;
+  transition: all 1s;
+  z-index: 1;
+}
+.openbtn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -15%;
+  transform: skewX(45deg);
+  background: rgb(186, 218, 85);
+  z-index: -1;
+  transition: all 1s;
+}
+.openbtn:hover {
+  cursor: pointer;
+}
+.openbtn:hover::before {
+  width: 150%;
+}
+
+.form {
+  display: none;
+}
+
+.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .event {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
-  margin: 25vh 5vw;
-  background: lightblue;
+  margin: 20vh auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.event-input {
+  font-size: 1rem;
+  outline: none;
+  padding: 0.25rem;
+  border: 1px solid rgb(238, 238, 238);
+}
+.event-input:focus {
+  border: none;
+  box-shadow: 0 0 0 3px rgb(186, 218, 85);
+}
+
+.blur {
+  filter: blur(15px);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
   text-align: center;
+  text-decoration: underline;
   margin: 2%;
   font-size: 2rem;
+  font-family: "Roboto Mono", monospace;
 }/*# sourceMappingURL=main.css.map */
