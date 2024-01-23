@@ -10,13 +10,15 @@
     <section class="container">
       <h1>Didlydoo</h1>
       <button class="form">open to create an event</button>
-      <form class="event" >
-        <h2>Add an event</h2>
-        <input type="text" name="event-title" class="event-title" required>
-        <input type="text" name="event-description" class="event-description">
-        <input type="date" name="event-date" class="event-date">
-        <button type="submit" class="event-button">Proposes an event !</button>
-      </form>
+    </section>
+    <section class="forms">
+        <form class="event" >
+            <h2>Add an event</h2>
+            <input type="text" name="event-title" class="event-title" placeholder="Give a name to your event" required maxlength="256">
+            <input type="text" name="event-description" class="event-description" placeholder="A few extra details about the event">
+            <label>Proposes a date :<input type="date" name="event-date" class="event-date"></label>
+            <button type="submit" class="event-button">Validate your event!</button>
+        </form>
     </section>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>

@@ -57,14 +57,20 @@ table {
 }
 
 .open {
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 25vh 5vw;
+  margin: 25vh auto;
   padding: 1rem;
-  background: lightblue;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+
+.blur {
+  filter: blur(15px);
 }
 
 h1 {
