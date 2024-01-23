@@ -1,14 +1,14 @@
 import createEvent from "./createevent.js";
 
-function closeForm (){
+function validateform (){
     const validateBtn = document.querySelector('.event-button');
     const formEvent = document.querySelector('.form');
 
-    validateBtn.addEventListener('click', () => {
+    validateBtn.addEventListener('click', e => {
+        createEvent();
         formEvent.classList.toggle('open');
-        createEvent()
     })
 }
 
 
-export default closeForm;
+export default validateform;
