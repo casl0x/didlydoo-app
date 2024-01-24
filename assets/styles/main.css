@@ -93,7 +93,7 @@ table {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 20vh auto;
+  margin: -5%;
   padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid black;
@@ -111,6 +111,17 @@ table {
 
 .blur {
   filter: blur(15px);
+}
+
+.list-event {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin: 2%;
+}
+
+.event {
+  border: 1px solid red;
 }
 
 body {

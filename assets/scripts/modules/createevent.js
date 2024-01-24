@@ -3,8 +3,11 @@ import { editEvent, deleteEvent } from "./dataBaseFunction";
 export function createEvent (element) { 
         const eventContainer = document.querySelector('.list-event');
 
+        const eventId = Date.now()
+
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
+        eventDiv.setAttribute('data-id', eventId)
 
         const eventNameElement = document.createElement('h2');
         eventNameElement.classList.add('event-name');
@@ -37,15 +40,18 @@ export function createEvent (element) {
         eventDiv.appendChild(eventNameElement);
         eventDiv.appendChild(eventDatesElement);
         eventDiv.appendChild(eventAuthorElement);
-        eventDiv.appendChild(eventDescriptionElement); 
+        eventDiv.appendChild(eventDescriptionElement);
+        eventDiv.appendChild(deleteButton);
+        eventDiv.appendChild(editButton) 
         
         return eventDiv;
 }
 
+/*  → à vérifier
 function deleteAction(eventId){
-
-}
+        deleteEvent(eventId)
+}*/
 
 function editAction(eventId){
-
+        editEvent(eventId)
 }
