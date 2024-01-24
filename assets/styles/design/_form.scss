@@ -9,7 +9,7 @@
 
 }
 
-.event {
+.input {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -17,7 +17,7 @@
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid black;
-    &-input {
+    &-txt {
         font-size: 1rem;
         outline: none;
         padding: .25rem;
