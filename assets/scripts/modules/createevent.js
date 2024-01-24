@@ -28,13 +28,13 @@ export function createEvent (element) {
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('event-delete');
         deleteButton.textContent = "X";
-        deleteButton.addEventListener('click', deleteAction(element.id))
+        // deleteButton.addEventListener('click', deleteAction(element.id))
 
         // edit event 
         const editButton = document.createElement('button');
         editButton.classList.add('event-edit');
         editButton.textContent = "edit";
-        editButton.addEventListener('click', editAction(element.id))
+        // editButton.addEventListener('click', editAction(element.id))
 
         eventDiv.appendChild(eventNameElement);
         eventDiv.appendChild(eventDatesElement);
@@ -51,6 +51,6 @@ function deleteAction(eventId){
         deleteEvent(eventId)
 }*/
 
-function editAction(eventId){
-        editEvent(eventId)
-}
+// function editAction(eventId){
+//         editEvent(eventId)
+// }
