@@ -1,7 +1,6 @@
 import { editEvent, deleteEvent } from "./dataBaseFunction";
 
 export function createEvent (element) { 
-        const eventContainer = document.querySelector('.list-event');
 
         const eventId = Date.now()
 
