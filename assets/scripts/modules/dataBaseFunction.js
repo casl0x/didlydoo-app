@@ -1,3 +1,48 @@
+export async function getAllEvents(){
+    try {
+        const response = await fetch('http://localhost:3000/api/events/');
+        const objectsArray = await response.json();
+
+        return objectsArray;
+    } catch(error){
+        console.log(error);
+    }
+}
+
+export async function getEvent (eventId){
+
+    try{
+        const response = await fetch('http://localhost:3000/api/events/' + eventId);
+        const object = await response.json();
+
+        return object;
+    } catch(error){
+        console.log(error);
+    }
+}
+
+export async function getAllAttendees(){
+    try {
+        const response = await fetch('http://localhost:3000/api/attendees/');
+        const objectsArray = await response.json();
+
+        return objectsArray;
+    } catch(error){
+        console.log(error);
+    }
+}
+
+export async function getAttendee(name){
+    try{
+        const response = await fetch('http://localhost:3000/api/attendees/' + name);
+        const object = await response.json();
+
+        return object;
+    } catch(error){
+        console.log(error);
+    }
+}
+
 export function postInfos(eventName, datesArray, eventAuthor, eventDescription){
     fetch('http://localhost:3000/api/events/', {
         method: 'POST',

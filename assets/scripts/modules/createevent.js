@@ -1,6 +1,7 @@
 import { editEvent, deleteEvent } from "./dataBaseFunction";
 
-export function createEvent (element, container) { 
+export function createEvent (element) { 
+        const eventContainer = document.querySelector('.list-event');
 
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
@@ -25,18 +26,26 @@ export function createEvent (element, container) {
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('event-delete');
         deleteButton.textContent = "X";
-        // deleteButton.addEventListener('click', )
+        deleteButton.addEventListener('click', deleteAction(element.id))
 
         // edit event 
         const editButton = document.createElement('button');
         editButton.classList.add('event-edit');
         editButton.textContent = "edit";
-        // editButton.addEventListener('click', )
+        editButton.addEventListener('click', editAction(element.id))
 
         eventDiv.appendChild(eventNameElement);
         eventDiv.appendChild(eventDatesElement);
         eventDiv.appendChild(eventAuthorElement);
-        eventDiv.appendChild(eventDescriptionElement);
+        eventDiv.appendChild(eventDescriptionElement); 
         
-        container.appendChild(eventDiv);
+        return eventDiv;
+}
+
+function deleteAction(eventId){
+
+}
+
+function editAction(eventId){
+
 }
