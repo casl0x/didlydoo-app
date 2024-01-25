@@ -6,7 +6,7 @@
     border-radius: 16px;
     background: rgba(211, 211, 211, 0.4);
     overflow: hidden;
-    transition: all 1s;
+    transition: all .5s;
     z-index: 1;
     &::before {
         content: '';

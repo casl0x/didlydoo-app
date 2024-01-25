@@ -43,22 +43,24 @@ export async function getAttendee(name){
     }
 }
 
-export function postInfos(eventName, datesArray, eventAuthor, eventDescription){
-    fetch('http://localhost:3000/api/events/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: eventName,
-            dates: datesArray,
-            author: eventAuthor,
-            description: eventDescription
-        })
+export async function postInfos(eventName, datesArray, eventAuthor, eventDescription){
+    try{
+        fetch('http://localhost:3000/api/events/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: eventName,
+                dates: datesArray,
+                author: eventAuthor,
+                description: eventDescription
+            })
 
-    })  .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error));
+    })  
+    } catch (error){
+        console.log(error);
+    }
 }
 
 
