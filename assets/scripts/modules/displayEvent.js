@@ -1,48 +1,19 @@
-import { getAllEvents, getAllAttendees } from "./dataBaseFunction.js";
+import { getAllEvents } from "./dataBaseFunction.js";
 import { createEvent } from "./createevent.js";
 
-export function displayEvent(listEvent){
+
+export async function displayEvent(){
     const eventContainer = document.querySelector('.list-event');
+    eventContainer.innerHTML = "";
 
-    if (!eventContainer){
-        return;
+    let events = await getAllEvents();
+    if (!events){
+        eventContainer.innerHTML = 'No event'; 
+    } else {
+        
+        events.forEach(element => {
+            eventContainer.appendChild(createEvent(element));
+        });
     }
-
-    getAllEvents()
-        .then(events => {
-            if(!events){
-                eventContainer.innerHTML = 'No event !'
-                return
-            }
-            
-            for(const element of events){
-                eventContainer.appendChild(createEvent(element))
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        });
-
-    getAllAttendees()
-        .then(events => {
-            if(!events){
-                eventContainer.innerHTML = 'No attendees !'
-                return
-            }
-            
-            for(const element of events){
-                const attendeeDiv = document.createElement('div');
-                attendeeDiv.classList.add('attende');
-
-                const dispoDate = document.createElement('p')
-                dispoDate.textContent = element.dates
-                attendeeDiv.appendChild(dispoDate);
-
-                eventContainer.appendChild(attendeeDiv);
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        });
         
 }

@@ -1,12 +1,12 @@
+import { postInfos } from "./modules/dataBaseFunction.js";
 import {addEvent, validateform} from "./modules/form.js";
-import { addDateToArray } from "./modules/datesArray.js";
 import { displayEvent } from "./modules/displayEvent.js";
 import { addMoreEvent } from "./modules/addEvent.js";
+import { addDateToArray } from "./modules/datesArray.js";
 
 
-
-addEvent()
+addEvent();
+addMoreEvent(postInfos);
 addDateToArray()
-addMoreEvent()
-validateform()
-displayEvent()
+validateform();
+displayEvent();

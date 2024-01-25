@@ -43,22 +43,24 @@ export async function getAttendee(name){
     }
 }
 
-export function postInfos(eventName, datesArray, eventAuthor, eventDescription){
-    fetch('http://localhost:3000/api/events/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: eventName,
-            dates: datesArray,
-            author: eventAuthor,
-            description: eventDescription
-        })
+export async function postInfos(eventName, datesArray, eventAuthor, eventDescription){
+    try{
+        fetch('http://localhost:3000/api/events/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: eventName,
+                dates: datesArray,
+                author: eventAuthor,
+                description: eventDescription
+            })
 
-    })  .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error));
+    })  
+    } catch (error){
+        console.log(error);
+    }
 }
 
 
@@ -73,8 +75,7 @@ export function editEvent (eventId, eventName, eventAuthor, eventDescription){
             author: eventAuthor,
             description: eventDescription
         })
-    })  .then(res => res.json())
-        .then(data => console.log(data))
+    })
         .catch(error => console.log(error));
 }
 
@@ -86,8 +87,7 @@ export function deleteEvent (eventId){
             'Content-Type' : 'application/json'
         },
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }
 
@@ -102,8 +102,7 @@ export function addDates (eventId, datesArray){
             dates: datesArray
         })
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }
 
@@ -119,8 +118,7 @@ export function attendEvent (eventId, attendeeName, datesAvailableArray){
             dates: datesAvailableArray,
         })
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }
 
@@ -136,7 +134,6 @@ export function editAttendance (eventId, attendeeName, datesAvailableArray){
             dates: datesAvailableArray
         })
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }

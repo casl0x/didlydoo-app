@@ -1,17 +1,23 @@
-import { createEvent } from "./createevent";
-import { postInfos } from "./dataBaseFunction";
+import { displayEvent } from "./displayEvent";
 
-export function addMoreEvent () {
-    const eventName = document.getElementById('etitle').value;
-    const eventAuthor = document.getElementById('eauthor').value;
-    const eventDescription = document.getElementById('edescription').value;
-    
-    let dates = [];
-    const sel = document.querySelector('select');
-    for (let i = 0; i< sel.options.length; i++){
-        const optionValue = sel.options[i].value;
-        dates.push(optionValue)
-    }
+export function addMoreEvent (postInfos) {
+    const formEvent = document.querySelector('.input');
 
-    postInfos(eventName, dates, eventAuthor, eventDescription)
+    formEvent.addEventListener('submit', async function(e){
+        e.preventDefault();
+        const eventName = document.getElementById('etitle').value;
+        const eventAuthor = document.getElementById('eauthor').value;
+        
+        const datesArray = [];
+        const sel = document.querySelector('select');
+        for (let i = 0; i < sel.options.length; i++){
+            const optionValue = sel.options[i].value;
+            datesArray.push(optionValue)
+        }
+
+        const eventDescription = document.getElementById('edescription').value;
+
+        fetch(postInfos(eventName, datesArray, eventAuthor, eventDescription))
+        .then(displayEvent);
+    });
 }

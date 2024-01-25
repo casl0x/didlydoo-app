@@ -2,11 +2,7 @@
 
 export function createEvent (element) { 
 
-        const eventId = Date.now()
-
         const eventDiv = document.createElement('div');
-        eventDiv.classList.add('event');
-        eventDiv.setAttribute('data-id', eventId)
 
         const eventNameElement = document.createElement('h2');
         eventNameElement.classList.add('event-name');
@@ -46,10 +42,10 @@ export function createEvent (element) {
         return eventDiv;
 }
 
-/*  → à vérifier
-function deleteAction(eventId){
-        deleteEvent(eventId)
-}*/
+
+// function deleteAction(eventId){
+//         deleteEvent(eventId)
+// }
 
 // function editAction(eventId){
 //         editEvent(eventId)
