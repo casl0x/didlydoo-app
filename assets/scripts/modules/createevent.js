@@ -1,6 +1,5 @@
 import { editEvent, deleteEvent} from "./dataBaseFunction";
 import { displayEvent } from "./displayEvent";
-import datesArray from "./addEvent.js";
 
 export function createEvent (element) { 
 
@@ -11,10 +10,12 @@ export function createEvent (element) {
         eventNameElement.classList.add('event-name');
         eventNameElement.textContent = element.name;
         
-        datesArray.forEach(element => {
+        element.dates.forEach(date => {
             const eventDatesElement = document.createElement('p');
             eventDatesElement.classList.add('event-dates');
-            eventDatesElement.textContent = `Dates : ${element.dates}`;     
+            eventDatesElement.textContent = `Dates : ${date}`;
+
+            eventDiv.appendChild(eventDatesElement);
         });
 
         const eventAuthorElement = document.createElement('p');
@@ -34,17 +35,20 @@ export function createEvent (element) {
         async function deleteFunction(e){
                 fetch(deleteEvent(e.currentTarget.eventId))
                 .then(displayEvent);
-                
         }
 
         // edit event 
         const editButton = document.createElement('button');
         editButton.classList.add('event-edit');
         editButton.textContent = "edit";
-        //editButton.addEventListener('click', editEvent(element.id));
+        editButton.addEventListener('click', editFunction);
+        editButton.eventId = element.id;
+        async function editFunction(e){
+            fetch(editEvent(e.currentTarget.eventId))
+            .then(displayEvent)
+        }
 
         eventDiv.appendChild(eventNameElement);
-        eventDiv.appendChild(eventDatesElement);
         eventDiv.appendChild(eventAuthorElement);
         eventDiv.appendChild(eventDescriptionElement);
         eventDiv.appendChild(deleteButton);
@@ -52,7 +56,3 @@ export function createEvent (element) {
         
         document.querySelector('.list-event').appendChild(eventDiv);
 }
-
-// function editAction(eventId){
-//         editEvent(eventId)
-// }
