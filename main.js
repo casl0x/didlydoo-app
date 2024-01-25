@@ -6,7 +6,9 @@ function test(){
 */
 
 async function test(){
-    let data = await getAllAttendees();
+    let data = await getAllEvents();
+    //console.log(data);
+    
     data.forEach(element => {
         let eventDiv = document.createElement("div");
         eventDiv.className = "event";
@@ -38,6 +40,7 @@ async function test(){
         eventDiv.appendChild(creationDate);
 
     });
+    
 }
 
 function edit(){
