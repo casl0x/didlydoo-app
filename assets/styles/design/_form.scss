@@ -32,3 +32,9 @@
 .blur {
     filter: blur(15px);
 }
+
+.datediv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

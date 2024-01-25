@@ -18,7 +18,11 @@
             <h2>Add an event</h2>
             <input type="text" name="name" class="input-txt" id="etitle" placeholder="Give a name to your event" required maxlength="256">
             <input type="text" name="author" class="input-txt" id="eauthor" placeholder="Who proposes the event ?" required>
-            <label>Proposes a date : <input type="date" name="dates" class="event-date" id="edate" required></label>
+            <div class="datediv">
+              <label>Proposes a date : <input type="date" name="edate" class="event-date" id="edate" required></label>
+              <button type="button" id="btndate">+</button>
+              <select name="edates" id="edates" size="3"></select>
+            </div>
             <input type="text" name="description" class="input-txt" id="edescription" placeholder="A few extra details about the event" maxlength="256">
             <button type="submit" class="input-button">Validate your event!</button>
         </form>

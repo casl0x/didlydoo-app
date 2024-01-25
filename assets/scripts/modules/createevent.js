@@ -1,4 +1,4 @@
-import { editEvent, deleteEvent } from "./dataBaseFunction";
+// import { editEvent, deleteEvent } from "./dataBaseFunction";
 
 export function createEvent (element) { 
 

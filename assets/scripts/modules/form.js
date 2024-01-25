@@ -17,5 +17,11 @@ export function validateform (){
     validateBtn.addEventListener('click', e => {
         container.classList.toggle('blur');
         formEvent.classList.toggle('open');
+        
+        let dates = [];
+        for (let o of document.querySelectorAll("#edates option"));
+        {
+        dates.push(o.value);
+        } 
     })
 }
