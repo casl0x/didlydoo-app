@@ -1,7 +1,7 @@
-import { createEvent } from "./createevent";
+import { postInfos } from "./dataBaseFunction";
 import { displayEvent } from "./displayEvent";
 
-export function addMoreEvent (postInfos) {
+export function addMoreEvent () {
     const formEvent = document.querySelector('.input');
 
     formEvent.addEventListener('submit', async function(e){

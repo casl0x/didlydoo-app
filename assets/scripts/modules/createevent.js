@@ -1,12 +1,12 @@
-import { editEvent, deleteEvent } from "./dataBaseFunction";
+import { editEvent, deleteEvent, postInfos } from "./dataBaseFunction";
+import { displayEvent } from "./displayEvent";
 
 export function createEvent (element) { 
 
-        const eventId = Date.now()
-
+        
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
-        eventDiv.setAttribute('data-id', eventId)
+        eventDiv.setAttribute('data-id', element.id)
 
         const eventNameElement = document.createElement('h2');
         eventNameElement.classList.add('event-name');
@@ -28,13 +28,19 @@ export function createEvent (element) {
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('event-delete');
         deleteButton.textContent = "X";
-        // deleteButton.addEventListener('click', deleteAction(element.id))
+        deleteButton.addEventListener('click', deleteFunction);
+        deleteButton.eventId = element.id;
+        async function deleteFunction(e){
+                fetch(deleteEvent(e.currentTarget.eventId))
+                .then(displayEvent);
+                
+        }
 
         // edit event 
         const editButton = document.createElement('button');
         editButton.classList.add('event-edit');
         editButton.textContent = "edit";
-        // editButton.addEventListener('click', editAction(element.id))
+        //editButton.addEventListener('click', editEvent(element.id));
 
         eventDiv.appendChild(eventNameElement);
         eventDiv.appendChild(eventDatesElement);
@@ -43,7 +49,7 @@ export function createEvent (element) {
         eventDiv.appendChild(deleteButton);
         eventDiv.appendChild(editButton) 
         
-        return eventDiv;
+        document.querySelector('.list-event').appendChild(eventDiv);
 }
 
 /*  → à vérifier

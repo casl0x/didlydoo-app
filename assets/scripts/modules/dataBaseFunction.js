@@ -80,15 +80,18 @@ export function editEvent (eventId, eventName, eventAuthor, eventDescription){
 }
 
 
-export function deleteEvent (eventId){
-    fetch('http://localhost:3000/api/events/' + eventId, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type' : 'application/json'
-        },
+export async function deleteEvent (eventId){
+    try{
+        fetch('http://localhost:3000/api/events/' + eventId, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
         
-    })
-        .catch(error => console.log(error));
+        })
+    } catch(error){
+        console.log(error)
+}
 }
 
 
