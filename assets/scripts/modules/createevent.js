@@ -1,4 +1,4 @@
-import { editEvent, deleteEvent, postInfos } from "./dataBaseFunction";
+import { editEvent, deleteEvent, postInfos, getEvent } from "./dataBaseFunction";
 import { displayEvent } from "./displayEvent";
 
 export function createEvent (element) { 
@@ -40,7 +40,47 @@ export function createEvent (element) {
         const editButton = document.createElement('button');
         editButton.classList.add('event-edit');
         editButton.textContent = "edit";
-        //editButton.addEventListener('click', editEvent(element.id));
+        editButton.addEventListener('click', formEditEvent);
+        editButton.eventId = element.id;
+
+        async function formEditEvent(e){
+                let elemId = e.currentTarget.eventId; 
+
+                let data = await getEvent(elemId);
+                console.log(data);
+
+                const container = document.querySelectorAll('.container');
+                const formEvent = document.querySelector('.editForm');
+                const validateBtn = document.querySelector('.edit-input-button');
+                formEvent.classList.toggle('open');
+                container.forEach((element) => {
+                element.classList.toggle('blur');
+                })
+
+                document.querySelector("#editetitle").value = data.name;
+                document.querySelector('#editeauthor').value = data.author;
+                document.querySelector("#editedescription").value = data.description;
+        
+        
+                
+                
+                
+                
+                validateBtn.addEventListener('click', e => {
+                        container.forEach((element) => {
+                        element.classList.toggle('blur');
+                        })
+                        formEvent.classList.toggle('open');
+                })
+                
+
+               
+                
+            }
+
+        async function editEventFunction(e){
+                editEvent(id, name, author, desc)
+        }
 
         eventDiv.appendChild(eventNameElement);
         eventDiv.appendChild(eventDatesElement);
