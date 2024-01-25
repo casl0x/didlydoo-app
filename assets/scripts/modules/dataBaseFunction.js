@@ -75,8 +75,7 @@ export function editEvent (eventId, eventName, eventAuthor, eventDescription){
             author: eventAuthor,
             description: eventDescription
         })
-    })  .then(res => res.json())
-        .then(data => console.log(data))
+    })
         .catch(error => console.log(error));
 }
 
@@ -88,8 +87,7 @@ export function deleteEvent (eventId){
             'Content-Type' : 'application/json'
         },
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }
 
@@ -104,8 +102,7 @@ export function addDates (eventId, datesArray){
             dates: datesArray
         })
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }
 
@@ -121,8 +118,7 @@ export function attendEvent (eventId, attendeeName, datesAvailableArray){
             dates: datesAvailableArray,
         })
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }
 
@@ -138,7 +134,6 @@ export function editAttendance (eventId, attendeeName, datesAvailableArray){
             dates: datesAvailableArray
         })
         
-    })  .then(res => res.json())
-        .then(data => {console.log(data)})
+    })
         .catch(error => console.log(error));
 }

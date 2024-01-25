@@ -12,9 +12,7 @@ export function addMoreEvent (postInfos) {
         datesArray.push(document.getElementById('edate').value);
         const eventDescription = document.getElementById('edescription').value;
 
-        await postInfos(eventName, datesArray, eventAuthor, eventDescription)
-        displayEvent();
+        fetch(postInfos(eventName, datesArray, eventAuthor, eventDescription))
+        .then(displayEvent);
     });
 }
-
-// pas fonctionnel 
