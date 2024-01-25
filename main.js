@@ -43,12 +43,12 @@ async function test(){
     
 }
 
-function edit(){
-    editEvent("378ee41aa49b", "Toust", "Dany", "New description");
+function testBis(){
+    postInfos("Test", ['2022-03-12'], "Dany", "New description");
 }
 
 let button = document.querySelector(".test");
 button.addEventListener('click', test);
 
-let editButton = document.querySelector(".edit");
-editButton.addEventListener('click', edit);
+let editButton = document.querySelector(".testBis");
+editButton.addEventListener('click', testBis);
