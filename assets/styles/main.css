@@ -93,10 +93,11 @@ table {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: -5%;
+  margin: 5%;
   padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid black;
+  background: white;
 }
 .input-txt {
   font-size: 1rem;
@@ -128,6 +129,9 @@ table {
 
 .event {
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 body {

@@ -21,3 +21,5 @@ export function addMoreEvent (postInfos) {
         .then(displayEvent);
     });
 }
+
+export default datesArray;

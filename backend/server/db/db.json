@@ -1,19 +1,5 @@
 [
   {
-    "id": "964e0c683dd2",
-    "name": "lalalal",
-    "author": "someone",
-    "description": "lalal",
-    "dates": [
-      "2024-01-26",
-      "2024-02-04"
-    ],
-    "created_at": "2024-01-25T13:37:01.446Z",
-    "num_modification": 0,
-    "last_modification": "2024-01-25T13:37:01.446Z",
-    "attendees": []
-  },
-  {
     "id": "4a06989377e0",
     "name": "ok",
     "author": "someone",
@@ -26,5 +12,7 @@
     "num_modification": 0,
     "last_modification": "2024-01-25T13:36:11.225Z",
     "attendees": []
+  }
+][]
   }
 ]

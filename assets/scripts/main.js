@@ -6,7 +6,7 @@ import { addDateToArray } from "./modules/datesArray.js";
 
 
 addEvent();
+addDateToArray();
 addMoreEvent(postInfos);
-addDateToArray()
 validateform();
 displayEvent();

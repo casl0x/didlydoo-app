@@ -4,29 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="shortcut icon" href="favicon.png">
     <title>Didlydoo</title>
   </head>
   <body>
-    <section class="container">
-      <h1>Didlydoo</h1>
-      <button class="openbtn">Click to create an event !</button>
-      <div class="list-event"></div>  
-    </section>
+    <header>
+      <section class="container">
+        <h1>Didlydoo</h1>
+        <button class="openbtn">Click to create an event !</button> 
+      </section>
 
-    <section class="form">
-        <form class="input" >
-            <h2>Add an event</h2>
-            <input type="text" name="name" class="input-txt" id="etitle" placeholder="Give a name to your event" required maxlength="256">
-            <input type="text" name="author" class="input-txt" id="eauthor" placeholder="Who proposes the event ?" required>
-            <div class="datediv">
-              <label>Proposes a date : <input type="date" name="edate" class="event-date" id="edate" required></label>
-              <button type="button" id="btndate">+</button>
-              <select name="edates" id="edates" size="3"></select>
-            </div>
-            <input type="text" name="description" class="input-txt" id="edescription" placeholder="A few extra details about the event" maxlength="256">
-            <button type="submit" class="input-button">Validate your event!</button>
-        </form>
-    </section>
+      <section class="form">
+          <form class="input" >
+              <h2>Add an event</h2>
+              <input type="text" name="name" class="input-txt" id="etitle" placeholder="Give a name to your event" required maxlength="256">
+              <input type="text" name="author" class="input-txt" id="eauthor" placeholder="Who proposes the event ?" required>
+              <div class="datediv">
+                <label>Proposes a date : <input type="date" name="edate" class="event-date" id="edate" required></label>
+                <button type="button" id="btndate">+</button>
+                <select name="edates" id="edates" size="3"></select>
+              </div>
+              <input type="text" name="description" class="input-txt" id="edescription" placeholder="A few extra details about the event" maxlength="256">
+              <button type="submit" class="input-button">Validate your event!</button>
+          </form>
+      </section>
+    </header>
+
+    <main class="container">
+      <div class="list-event"></div> 
+    </main>
+    <footer>
+
+    </footer>
     
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
