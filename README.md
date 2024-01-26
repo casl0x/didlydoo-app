@@ -5,7 +5,9 @@ Plan your events and check guest availability !
 
 ## Features
 1. Create a event
-2. Check when your guest is available
+2. Edit your event
+4. Give your availability to other
+3. Check when your guest is available
 
 ## Used technology
 <details>
@@ -13,7 +15,7 @@ Plan your events and check guest availability !
         <ul>
             <li>HTML</li>
             <li>CSS - Sass</li>
-            <li>Javascript </li>
+            <li>Javascript (modules)</li>
         </ul>
 </details>
 
@@ -22,3 +24,4 @@ Plan your events and check guest availability !
 
 ## To upgrade
 - activate the participation button
+- give it a better style 
