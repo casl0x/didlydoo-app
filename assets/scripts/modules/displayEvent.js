@@ -16,11 +16,19 @@ export async function displayEvent(){
 
     let attendees = await getAllAttendees();
     const attendDiv = document.createElement('div');
-    document.querySelector('.event').appendChild(attendDiv)
+    attendDiv.classList.add('attendees')
+    attendDiv.innerHTML = ""
+    document.querySelector('.div').appendChild(attendDiv)
     if (!attendees){
-        attendDiv.innerHTML = 'No attendees ! '
+        attendDiv.innerHTML = 'No attendees !'
     } else {
-        
+        attendees.forEach(element => {
+            const attendDate = document.createElement('p')
+            attendDate.textContent = element.dates;
+
+            const attendAuthor = document.createElement('p')
+            attendAuthor.textContent = element.name;
+        })
     }
 }
 

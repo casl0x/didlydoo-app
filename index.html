@@ -15,19 +15,29 @@
       </section>
 
       <section class="form">
-          <form class="input" >
-              <h2>Add an event</h2>
-              <input type="text" name="name" class="input-txt" id="etitle" placeholder="Give a name to your event" required maxlength="256">
-              <input type="text" name="author" class="input-txt" id="eauthor" placeholder="Who proposes the event ?" required>
-              <div class="datediv">
-                <label>Proposes a date : <input type="date" name="edate" class="event-date" id="edate" required></label>
-                <button type="button" id="btndate">+</button>
-                <select name="edates" id="edates" size="3"></select>
-              </div>
-              <input type="text" name="description" class="input-txt" id="edescription" placeholder="A few extra details about the event" maxlength="256">
-              <button type="submit" class="input-button">Validate your event!</button>
-          </form>
-      </section>
+        <form class="input" >
+            <h2>Add an event</h2>
+            <input type="text" name="name" class="input-txt" id="etitle" placeholder="Give a name to your event" required maxlength="256">
+            <input type="text" name="author" class="input-txt" id="eauthor" placeholder="Who proposes the event ?" required>
+            <div class="datediv">
+              <label>Proposes a date : <input type="date" name="edate" class="event-date" id="edate" required></label>
+              <button type="button" id="btndate">+</button>
+              <select name="edates" id="edates" size="3"></select>
+            </div>
+            <input type="text" name="description" class="input-txt" id="edescription" placeholder="A few extra details about the event" maxlength="256">
+            <button type="submit" class="input-button">Validate your event!</button>
+        </form>
+    </section>
+
+      <section class="editForm">
+        <form class="input" >
+            <h2>Edit an event</h2>
+            <input type="text" name="name" class="edit-input-txt" id="editetitle" placeholder="Give a name to your event" required maxlength="256">
+            <input type="text" name="author" class="edit-input-txt" id="editeauthor" placeholder="Who proposes the event ?" required>
+            <textarea rows="4" name="description" class="input-txt" id="editedescription" placeholder="A few extra details about the event" maxlength="256"></textarea>
+            <button type="submit" class="edit-input-button">Validate changes!</button>
+        </form>
+    </section>
     </header>
 
     <main class="container">
