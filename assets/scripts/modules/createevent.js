@@ -85,9 +85,32 @@ export function createEvent (element) {
 
         const attendDiv = document.createElement('div');
         attendDiv.classList.add('attendees');
+
+        const availableForm = document.createElement('form');
+        availableForm.classList.add('available')
+        const availablePeople = document.createElement('input');
+        availablePeople.type = 'texte';
+        const availableDate = document.createElement('input');
+        availableDate.type = 'date';
+        const availableBtn = document.createElement('button');
+        availableBtn.textContent = 'ok'
+        availableBtn.addEventListener('click', () => {
+                
+        })
+
+        availableForm.appendChild(availablePeople)
+        availableForm.appendChild(availableDate)
+        availableForm.appendChild(availableBtn)
+
+        const participeEvent = document.createElement('button');
+        participeEvent.classList.add('attendees-btn');
+        participeEvent.textContent = 'Take part !'
+        participeEvent.addEventListener('click', () => {
+                availableForm.classList.toggle('participe')
+        })
+
         const availableAttendeesElement = document.createElement('p');
         availableAttendeesElement.classList.add('attendees-available');
-
         const datesWithAvailableAttendees = element.dates.filter(date => {
             return date.attendees.some(attendee => attendee.available === true);
         });
@@ -95,21 +118,21 @@ export function createEvent (element) {
             const date = new Date(dateObj.date);
             const availableAttendees = dateObj.attendees.filter(attendee => attendee.available === true);
             const attendeesList = availableAttendees.map(attendee => attendee.name).join(', ');
-
             const dateInfo = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
             const dateWithAttendeesInfo = `${dateInfo} - Available contact: ${attendeesList}`;
-
             const dateElement = document.createElement('p');
             dateElement.textContent = dateWithAttendeesInfo;
-
             availableAttendeesElement.appendChild(dateElement);
         })
+
+        attendDiv.appendChild(participeEvent)
+        attendDiv.appendChild(availableForm)
         attendDiv.appendChild(availableAttendeesElement)
+        
 
         const div = document.createElement('div')
         div.classList.add('div')
         div.appendChild(eventDiv)
         div.appendChild(attendDiv)
-        document.querySelector('.list-event').appendChild(div);
-        
+        document.querySelector('.list-event').appendChild(div); 
 }

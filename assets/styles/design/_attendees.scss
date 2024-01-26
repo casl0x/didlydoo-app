@@ -1,0 +1,14 @@
+.available {
+    display: none;
+}
+
+.participe {
+    display: flex;
+    margin: 1%;
+}
+
+.attendees {
+    &-btn {
+        margin: 1%;
+    }
+}
