@@ -7,7 +7,16 @@ export function addDateToArray (){
         if (!d.trim()) {
             alert("Select a date first.");
         } else {
-            sel.innerHTML += `<option value="${d}">${d}</option>`;
+            const validateDate = !isNaN(new Date(d).getTime());
+            if (validateDate) {
+                const dateObj = new Date(d);
+                const formattedDate = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+
+                sel.innerHTML += `<option value="${d}">${formattedDate}</option>`;
+            } else {
+
+            }
+            
         }
 
     })

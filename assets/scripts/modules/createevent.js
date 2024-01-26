@@ -13,9 +13,11 @@ export function createEvent (element) {
         
         const eventDatesElement = document.createElement('p');
         eventDatesElement.classList.add('event-dates');
-        const formattedDates = element.dates.map(date => new Date(date).toString());
-        const formattedDateText = formattedDates.join(', ');
-        eventDatesElement.textContent = `Dates : ${formattedDateText}`;
+        const formattedDates = element.dates.map(dateObj => {
+                const date = new Date(dateObj.date);
+                return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        });
+        eventDatesElement.textContent = `Dates : ${formattedDates.join(', ')}`;
 
         const eventAuthorElement = document.createElement('p');
         eventAuthorElement.classList.add('event-author');
