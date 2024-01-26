@@ -1,11 +1,10 @@
-import { editEvent, deleteEvent, postInfos, getEvent } from "./dataBaseFunction";
+import { editEvent, deleteEvent, getEvent } from "./dataBaseFunction";
 import { displayEvent } from "./displayEvent";
 
 export function createEvent (element) { 
 
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
-        eventDiv.setAttribute('data-id', element.id)
 
         const eventNameElement = document.createElement('h2');
         eventNameElement.classList.add('event-name');
@@ -84,9 +83,33 @@ export function createEvent (element) {
         eventDiv.appendChild(deleteButton);
         eventDiv.appendChild(editButton) 
 
+        const attendDiv = document.createElement('div');
+        attendDiv.classList.add('attendees');
+        const availableAttendeesElement = document.createElement('p');
+        availableAttendeesElement.classList.add('attendees-available');
+
+        const datesWithAvailableAttendees = element.dates.filter(date => {
+            return date.attendees.some(attendee => attendee.available === true);
+        });
+        datesWithAvailableAttendees.forEach(dateObj => {
+            const date = new Date(dateObj.date);
+            const availableAttendees = dateObj.attendees.filter(attendee => attendee.available === true);
+            const attendeesList = availableAttendees.map(attendee => attendee.name).join(', ');
+
+            const dateInfo = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+            const dateWithAttendeesInfo = `${dateInfo} - Available contact: ${attendeesList}`;
+
+            const dateElement = document.createElement('p');
+            dateElement.textContent = dateWithAttendeesInfo;
+
+            availableAttendeesElement.appendChild(dateElement);
+        })
+        attendDiv.appendChild(availableAttendeesElement)
+
         const div = document.createElement('div')
         div.classList.add('div')
         div.appendChild(eventDiv)
+        div.appendChild(attendDiv)
         document.querySelector('.list-event').appendChild(div);
         
 }
