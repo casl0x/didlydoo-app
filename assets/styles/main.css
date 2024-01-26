@@ -146,6 +146,19 @@ table {
   width: 50%;
 }
 
+.available {
+  display: none;
+}
+
+.participe {
+  display: flex;
+  margin: 1%;
+}
+
+.attendees-btn {
+  margin: 1%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
