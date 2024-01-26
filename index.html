@@ -4,32 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="shortcut icon" href="favicon.png">
     <title>Didlydoo</title>
   </head>
   <body>
-    <section class="container">
-      <h1>Didlydoo</h1>
-<<<<<<< HEAD
-      <form class="event" >
-        <h2>Add an event</h2>
-        <input type="text" name="event-title" class="event-title" required>
-        <input type="text" name="event-description" class="event-description">
-        <input type="date" name="event-date" class="event-date">
-        <button type="submit" class="event-button">Propases an event !</button>
-      </form>
-=======
-      <button class="openbtn">Click to create an event !</button>
->>>>>>> form
-    </section>
-    <section class="form">
-        <form class="event" >
-            <h2>Add an event</h2>
-            <input type="text" name="event-title" class="event-input" id="etitle" placeholder="Give a name to your event" required maxlength="256">
-            <input type="text" name="event-description" class="event-input" id="edescription" placeholder="A few extra details about the event">
-            <label>Proposes a date : <input type="date" name="event-date" class="event-date"></label>
-            <button type="submit" class="event-button">Validate your event!</button>
-        </form>
-    </section>
+    <header>
+      <section class="form">
+          <form class="event" >
+      
+        <section class="container">
+          <h1>Didlydoo</h1>
+          <button class="openbtn">Click to create an event !</button> 
+        </section>
+
+        <section class="form">
+          <form class="input" >
+              <h2>Add an event</h2>
+              <input type="text" name="name" class="input-txt" id="etitle" placeholder="Give a name to your event" required maxlength="256">
+              <input type="text" name="author" class="input-txt" id="eauthor" placeholder="Who proposes the event ?" required>
+              <div class="datediv">
+                <label>Proposes a date : <input type="date" name="edate" class="event-date" id="edate" required></label>
+                <button type="button" id="btndate">+</button>
+                <select name="edates" id="edates" size="3"></select>
+              </div>
+              <input type="text" name="description" class="input-txt" id="edescription" placeholder="A few extra details about the event" maxlength="256">
+              <button type="submit" class="input-button">Validate your event!</button>
+          </form>
+        </section>
+
+        <section class="editForm">
+          <form class="input" >
+              <h2>Edit an event</h2>
+              <input type="text" name="name" class="edit-input-txt" id="editetitle" placeholder="Give a name to your event" required maxlength="256">
+              <input type="text" name="author" class="edit-input-txt" id="editeauthor" placeholder="Who proposes the event ?" required>
+              <textarea rows="4" name="description" class="input-txt" id="editedescription" placeholder="A few extra details about the event" maxlength="256"></textarea>
+              <button type="submit" class="edit-input-button">Validate changes!</button>
+          </form>
+      </section>
+    </header>
+
+    <main class="container">
+      <div class="list-event"></div> 
+    </main>
+    <footer>
+
+    </footer>
+    
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
 </html>
